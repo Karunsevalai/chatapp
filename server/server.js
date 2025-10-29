@@ -45,20 +45,9 @@ app.use(cors({
   origin: ["https://chatapp.mysqft.in", "https://chatapp-git-main-haris-projects-a4253eb9.vercel.app"], // allow production + local dev
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
+  optionsSuccessStatus: 200 
 }));
 
-// ✅ Global CORS middleware
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://chatapp.mysqft.in");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
-  next();
-});
 
 app.use("/api/status", (req,res)=> res.send("Server is live"));
 
