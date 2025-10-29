@@ -40,7 +40,12 @@ io.on("connection" , (socket)=>{
 //Middleware setup
 app.use(express.json({limit: '4mb'}));
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: ["https://chatapp.mysqft.in", "https://chatapp-git-main-haris-projects-a4253eb9.vercel.app/login"], // allow production + local dev
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+}));
 
 app.use("/api/status", (req,res)=> res.send("Server is live"));
 
