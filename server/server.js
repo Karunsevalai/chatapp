@@ -42,7 +42,7 @@ app.use(express.json({limit: '4mb'}));
 
 // app.use(cors());
 app.use(cors({
-  origin: ["https://chatapp.mysqft.in", "https://chatapp-git-main-haris-projects-a4253eb9.vercel.app"], // allow production + local dev
+  origin: ["https://chatapp.mysqft.in", "https://chatapp-git-main-haris-projects-a4253eb9.vercel.app","http://localhost:5173"], // allow production + local dev
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
   optionsSuccessStatus: 200 
